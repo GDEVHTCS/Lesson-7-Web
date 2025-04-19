@@ -1,3 +1,8 @@
+body{
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    height: 110vh;
+}
 .Title{
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -14,7 +19,8 @@
     cursor: pointer;
     animation-name: moving-title;
     animation-iteration-count: 1;
-    animation-duration: 2s;
+    animation-duration: 5s;
+    
 }
 .Title:hover{
     color: aliceblue;
@@ -24,6 +30,14 @@
 @keyframes moving-title{
     0%{
         transform: rotate(360deg);
+    }
+    50%{
+        transform: rotate(-360deg);
+        color: #4b8c58;
+    }
+    100%{
+        transform: rotate(360deg);
+        color: rgb(0, 0, 0);
     }
     
 }
@@ -37,7 +51,9 @@
     border:1px solid #ccc;
     height: fit-content;
     border-radius: 15px;
-    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%); 
+    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%);   
+    position: absolute;
+    margin-top: 10px;
 }
 .auto{
     background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
@@ -51,6 +67,7 @@
     font-size: 20px;
     font-weight: 600;
     box-shadow: 0px 0px 15px black;
+    transition: 0.6s;
 }
 
 .mech{
@@ -64,64 +81,38 @@
     font-size: 15px;
     font-weight: 600;
     box-shadow: 0px 0px 15px black;   
+    transition: 0.6s;
 }
-.auto:hover{
-    background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
-    transform: scale(1.1);
-    transition: 0.3s;
+.auto:hover,.mech:hover{
+    transform: scale(0.90);
 }
-.mech:hover{
-    background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
-    transform: scale(1.1);
-    transition: 0.3s;
+.Main-Animation-Div{
+    width: 1000px;
+    height: 700px;
+    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%);
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 15px rgb(121, 121, 121);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
-.auto-mech-div:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
+#arrow-up,#arrow-down,#arrow-left,#arrow-right{
+    border-radius: 100%;
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: linear-gradient(to right, #00eeff   0%, #1b7a74 100%);
 }
-.auto-mech-div:hover .auto{
-    background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
-    transform: scale(1.1);
-    transition: 0.3s;
+
+#arrow-up:hover,#arrow-down:hover,#arrow-left:hover,#arrow-right:hover{
+    background: linear-gradient(to right, #1b7a74 0%, #00eeff  100%);
+    color: white;
 }
-.auto-mech-div:hover .mech{
-    background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
-    transform: scale(1.1);
-    transition: 0.3s;
+#arrow-up:active,#arrow-down:active,#arrow-left:active,#arrow-right:active{
+    transform: scale(0.90);
 }
-.auto-mech-div:hover .Title{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-.auto-mech-div:hover .Title:hover{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-.auto-mech-div:hover .Title:hover{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-.auto-mech-div:hover .Title:hover{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-.auto-mech-div:hover .Title:hover{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-.auto-mech-div:hover .Title:hover{
-    color: aliceblue;
-    text-shadow: 2px 2px 25px rgb(44, 8, 8);
-    transform: scale(1.1);
-    transition: 0.3s;
+.moving-arrows{
+    display: flex;
+    gap: 15px;
 }
