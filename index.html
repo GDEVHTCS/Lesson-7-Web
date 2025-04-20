@@ -15,24 +15,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloock:wght@100&family=Gloock:wght@300&family=Gloock:wght@400&family=Gloock:wght@500&family=Gloock:wght@700&display=swap" rel="stylesheet">
     <!-- font awesome link -->
     <script src="https://kit.fontawesome.com/5e64233f23.js" crossorigin="anonymous"></script>
+ 
 </head>
 <body>
+
     <header>
+        <button class="Desc-Btn" popovertarget="Pop-description">Decription</button>
+    <div id="Pop-description" popover>
+        <h2 class="desc-title">Auto-Moving Description</h2>
+        <p class="desc-description">A flying Car in space tryng to escape sun, but the gravitation is pulling the car</p>
+        <p  class="desc-description">You can also move with arrows, (out of border) |feature| DD</p>
+        <button class="close-btn" popovertarget="Pop-description">Close</button>
+    </div>
+        <img src="images/sky.png" id="Sky" alt="sky" draggable="false">
         <h1 class="Title">Test-Anim</h1>
     </header>
 
     <main class="main">
         <div class="auto-mech-div">
-            <button class="auto">Auto-Moving</button>
-            <button class="mech">Mechanical-Moving</button>
+            <button id="auto">Auto-Moving</button>
+            <button id="mech">Mechanical-Moving</button>
         </div>
     <div class="Main-Animation-Div">
         <div class="moving-arrows">
-            <div id="arrow-up" title="up-arrow"><i class="fa-solid fa-arrow-up"></i></div>
-            <div id="arrow-down" title="down-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-            <div id="arrow-left" title="left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
-            <div id="arrow-right" title="right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <button id="arrow-up1" title="up-arrow"><i class="fa-solid fa-arrow-up"></i></button>
+            <button id="arrow-down1" title="down-arrow"><i class="fa-solid fa-arrow-down"></i></button>
+            <button id="arrow-left1" title="left-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="arrow-right1" title="right-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+            <p id="Warning-text">Press Mechanical-Moving to control the object with arrows!</p>
         </div>
+        
+        
+        <img src="images/purplesky.png" id="Purple-Sky" alt="purple-sky" draggable="false">
+        <img src="images/object.png" id="Object1" alt="object" draggable="false"> 
+       
     </div>
     </main>
 </body>

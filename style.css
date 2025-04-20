@@ -1,17 +1,17 @@
 body{
     scrollbar-width: thin;
     scroll-behavior: smooth;
-    height: 110vh;
+    overflow: hidden;
 }
 .Title{
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%);
+    background:linear-gradient(to right, #43847d   0%, #070b59 100%);
     width: 400px;
     padding: 15px;
     border: 1px solid #ccc;
     margin: 0 auto;
-    color: rgb(0, 0, 0);
+    color: rgb(83, 83, 83);
     text-shadow: 2px 2px 5px rgb(44, 8, 8);
     box-shadow: 0px 0px 15px black;
     border-radius: 15px;
@@ -48,29 +48,29 @@ body{
     width: 200px;
     padding: 30px;
     gap:50px;
-    border:1px solid #ccc;
+    border:1px solid #000000;
     height: fit-content;
     border-radius: 15px;
-    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%);   
+    background:linear-gradient(to right, hsl(183, 100%, 74%)   0%, #113f68 100%);   
     position: absolute;
     margin-top: 10px;
 }
-.auto{
-    background:linear-gradient(to right, #4b8c58   0%, #33c10cac 100%);
+#auto{
+    /* background:linear-gradient(to right, #989fb0   0%, #1500ffac 100%); */
     outline: none;
     border: none;
     padding: 15px;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    color: #000000;
     font-size: 20px;
     font-weight: 600;
     box-shadow: 0px 0px 15px black;
-    transition: 0.6s;
+    transition: 0.2s;
 }
 
-.mech{
+#mech{
     outline: none;
     border: none;
     padding: 15px;
@@ -81,38 +81,167 @@ body{
     font-size: 15px;
     font-weight: 600;
     box-shadow: 0px 0px 15px black;   
-    transition: 0.6s;
+    transition: 0.2s;
 }
-.auto:hover,.mech:hover{
-    transform: scale(0.90);
+#auto:hover,#mech:hover{
+    transform: scale(1.05);
 }
 .Main-Animation-Div{
     width: 1000px;
-    height: 700px;
-    background:linear-gradient(to right, #fff   0%, #f0f0f0 100%);
-    border: 1px solid #ccc;
+    height: 500px;
+    background:linear-gradient(to left, #c5c5c5   0%, #f0f0f0 100%);
+    border: 1px solid #000000;
     box-shadow: 0px 0px 15px rgb(121, 121, 121);
     border-radius: 5px;
     margin: 0 auto;
     margin-top: 100px;
+    overflow: hidden;
 }
-#arrow-up,#arrow-down,#arrow-left,#arrow-right{
-    border-radius: 100%;
+#arrow-up1,#arrow-down1,#arrow-left1,#arrow-right1{
+    border-radius: 20px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: linear-gradient(to right, #00eeff   0%, #1b7a74 100%);
+}
+#arrow-up2,#arrow-down2,#arrow-left2,#arrow-right2{
+    border-radius: 20px;
     font-size: 30px;
     cursor: pointer;
     border: 1px solid #ccc;
     padding: 15px;
     background: linear-gradient(to right, #00eeff   0%, #1b7a74 100%);
 }
-
-#arrow-up:hover,#arrow-down:hover,#arrow-left:hover,#arrow-right:hover{
+#arrow-up2:hover,#arrow-down2:hover,#arrow-left2:hover,#arrow-right2:hover{
     background: linear-gradient(to right, #1b7a74 0%, #00eeff  100%);
     color: white;
 }
-#arrow-up:active,#arrow-down:active,#arrow-left:active,#arrow-right:active{
+#arrow-up2:active,#arrow-down2:active,#arrow-left2:active,#arrow-right2:active{
     transform: scale(0.90);
 }
 .moving-arrows{
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px;
+    border: 1px solid #000000;
+}
+#Warning-text{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #650202;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: black;
+} 
+#Warning-text:hover{
+    color: #ff0000;
+}
+ 
+#Object1{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    user-select: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+#Object2{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    user-select: none;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    animation-name: Object-Animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes Object-Animation{
+    0%{
+        left: 60%;
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    35%{
+        transform: scale(0.80);
+    }
+    50%{
+        left: 30%;
+    }
+    75%{
+        transform: rotate(330deg);
+    }
+    100%{
+        left: 60%;
+    }
+  
+}
+#Sky{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+#Purple-Sky{
+    height: 100%;
+    width: 100%;
+}
+.desc-title{
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: #000000;
+    margin-top: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+.desc-description{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    padding: 2px;
+    color: #113f68;
+}
+#Pop-description{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 15px #ccc;
+}
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(to right, #00eeff   0%, #1b7a74 100%);
+    border-radius: 30% 70% 35% 65% / 53% 38% 62% 47% ;
+    /* 29% 71% 12% 88% / 84% 44% 56% 16%  */
+    font-size: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 15px;
+    animation-name: close-btn-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes close-btn-animation{
+    0%{
+        border-radius: 30% 70% 35% 65% / 53% 38% 62% 47% ;
+    }
+    50%{
+        border-radius:  33% 67% 93% 7% / 84% 66% 34% 16% ;
+    }
+    100%{
+        border-radius: 30% 70% 35% 65% / 53% 38% 62% 47% ;
+    }
 }
