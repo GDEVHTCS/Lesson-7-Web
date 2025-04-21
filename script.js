@@ -41,4 +41,29 @@ mech.addEventListener("click", ()=> {
     arrowup.id = "arrow-down2";
     enableButtons()
 })
- 
+
+var position = 0;
+
+function MechanicalMoving() {
+    arrowup.addEventListener("click", ()=>{
+        position -= 10;
+        object1.style.top = position + "%"; 
+    })
+
+    arrowdown.addEventListener("click", ()=>{
+        position += 10;
+        object1.style.top = position + "%"; 
+    })
+
+    arrowleft.addEventListener("click", ()=>{
+        position -= 10;
+        object1.style.left = position + "%"; 
+    })
+
+
+    arrowright.addEventListener("click", ()=>{
+        position += 10;
+        object1.style.left = position + "%"; 
+    })
+}
+MechanicalMoving();
